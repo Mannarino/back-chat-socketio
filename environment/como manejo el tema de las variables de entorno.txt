@@ -1,0 +1,20 @@
+
+
+como manejo el tema de las variables de entorno
+
+cree un sistema, el cual consiste en una carpeta llamada environment que tiene 
+tres archivos:
+           -config
+           -configToDeploy
+           -getEnvironment
+
+el archivo config tiene variables con los valores de entorno quemados en sus variables,
+el archivo configToDeploy tiene las mismas variables que el archivo config pero esas variables
+hacen referencia a variables de entornos los cuales son pasados cuando se ejecuta el script en el servidor de produccion
+y el archivo getEnvironment es un modulo que exporta una funcion, esta funcion trata de cargar en una variable llamada config
+un objeto a traves de la importacion del archivo config y sino lo encuentra hay un else para cargar esa variable con las variables
+del archivo configToDeeploy, el tema esta que en el archivo ignore puse que el archivo config no sea subido a produccion
+por ende al no estar presente siempre se cargara esa varaible condig con los valores de entornoo pasados en produccion
+ y luego en las partes del proyecto dodne necesito esos valores requiero al archivo getEnvironment y ese requerimiento se
+ guardar en uan variable que tendra el objeto con las variables de entorno y entonces a partir de esa variable accedo a las propiedasdes y 
+las coloco en las partes del codigo dodne se necesitan esos valores
